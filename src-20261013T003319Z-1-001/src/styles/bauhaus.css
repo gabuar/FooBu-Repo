@@ -1,0 +1,21 @@
+/* ===== Bauhaus shapes =====
+   Circles, wedges, rings and bars with soft gradients. <Bauhaus /> drops four of them (.c1 to .c4)
+   behind a parent; each parent decides where they sit. Tweak sizes and positions here. */
+.bauhaus { position: absolute; inset: 0; overflow: hidden; pointer-events: none; border-radius: inherit; z-index: 0; }
+.bh { position: absolute; display: block; }
+
+/* Home hero: a plate (same shapes as the logo) on the right */
+.hero .bh.c1 { width: 340px; height: 340px; border-radius: 50%; background: var(--g-tomato); right: 40px; top: 50%; margin-top: -170px; }
+.hero .bh.c2 { width: 232px; height: 232px; border-radius: 50%; background: #fff6e0; right: 94px; top: 50%; margin-top: -116px; }
+.hero .bh.c3 { width: 116px; height: 116px; border-top-right-radius: 116px; background: var(--g-sun); right: 94px; top: calc(50% - 116px); }
+.hero .bh.c4 { width: 60px; height: 60px; border-radius: 50%; background: var(--g-basil); right: 204px; top: calc(50% + 24px); }
+
+/* Log in / Sign up brand panel */
+.auth-aside > .bauhaus { z-index: 0; }
+.auth-aside .bh.c1 { width: 230px; height: 230px; border-radius: 50%; background: var(--g-sun); right: 2%; bottom: -80px; }
+.auth-aside .bh.c2 { width: 150px; height: 150px; border-bottom-left-radius: 100%; background: var(--g-basil); right: 12%; top: 0; }
+.auth-aside .bh.c3 { width: 56px; height: 56px; border-radius: 50%; border: 10px solid #fff6e0; right: 6%; top: 40%; }
+.auth-aside .bh.c4 { width: 120px; height: 14px; border-radius: 8px; background: #fff6e0; left: 48px; bottom: 96px; }
+
+@media (max-width: 960px) { .hero .bh.c1 { right: -80px; } .hero .bh.c2 { right: -26px; } .hero .bh.c3 { right: -26px; } .hero .bh.c4 { right: 84px; } }
+@media (max-width: 640px) { .hero .bh { opacity: .35; } .auth-aside .bh.c3, .auth-aside .bh.c4 { display: none; } }

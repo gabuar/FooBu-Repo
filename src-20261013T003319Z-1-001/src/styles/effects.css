@@ -1,0 +1,19 @@
+/* ===== Spin the plate =====
+   Add your own animations here. */
+.spin-card { display: grid; grid-template-columns: minmax(280px, 400px) 1fr; gap: 40px; align-items: center; padding: 34px; background: linear-gradient(135deg, #fffaf0, #fff); }
+.wheel-stage { display: grid; place-items: center; padding: 14px; border-radius: 50%; background: var(--g-hero); }
+.wheel { position: relative; width: min(360px, 100%); aspect-ratio: 1; }
+.wheel-spin { width: 100%; height: 100%; transition: transform 4.2s cubic-bezier(.12, .72, .08, 1); }
+.wheel-spin svg { width: 100%; height: 100%; display: block; }
+.wheel-label { font-family: var(--font-b); font-weight: 700; font-size: 12.5px; fill: #2a2119; }
+.wheel-hub { position: absolute; left: 50%; top: 50%; width: 76px; height: 76px; padding: 0; transform: translate(-50%, -50%); border-radius: 50%; border: 4px solid #fff; background: var(--g-brand); color: #fff; font-weight: 700; letter-spacing: .04em; }
+.wheel-hub:hover:not(:disabled) { transform: translate(-50%, -50%) scale(1.06); } .wheel-hub:active:not(:disabled) { transform: translate(-50%, -50%) scale(.94); }
+.wheel-pin { position: absolute; left: 50%; top: -8px; z-index: 3; width: 0; height: 0; transform: translateX(-50%); border-left: 13px solid transparent; border-right: 13px solid transparent; border-top: 26px solid var(--brand); }
+.spin-controls h2 { margin-bottom: 6px; }
+.spin-go { font-size: 1.1rem; padding: 12px 30px; margin: 6px 0 14px; }
+.winner { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-top: 8px; padding: 14px 18px; border-radius: var(--radius); background: var(--gold-soft); border: 1px solid #f0d28f; animation: pop .45s; }
+.winner > div { flex: 1; min-width: 150px; } .winner-emoji { font-size: 2.4rem; }
+.history { margin-top: 18px; }
+
+@media (max-width: 860px) { .spin-card { grid-template-columns: 1fr; gap: 22px; padding: 22px; } }
+@media (prefers-reduced-motion: reduce) { .wheel-spin { transition-duration: .01s !important; } }
